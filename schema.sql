@@ -1,11 +1,16 @@
--- Creating tables for PH-EmployeeDB
+-- Creating tables for PH-EmployeeDB in order to comment we use (--)
 CREATE TABLE departments (
      dept_no VARCHAR(4) NOT NULL,
      dept_name VARCHAR(40) NOT NULL,
      PRIMARY KEY (dept_no),
      UNIQUE (dept_name)
 );
+-- note you can also create a table by going to schemas
+--and drop down to tables right click create table
+--this however doesn't create a schema we can save 
+--later
 
+-- creating table for employees
 CREATE TABLE employees (
      emp_no INT NOT NULL,
      birth_date DATE NOT NULL,
@@ -16,6 +21,7 @@ CREATE TABLE employees (
      PRIMARY KEY (emp_no)
 );
 
+-- creating dept_manager table with foreing keys and primary keys
 CREATE TABLE dept_manager (
 dept_no VARCHAR(4) NOT NULL,
     emp_no INT NOT NULL,
@@ -26,6 +32,7 @@ FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
 
+-- creating salaries table with also foreing key and primary key
 CREATE TABLE salaries (
   emp_no INT NOT NULL,
   salary INT NOT NULL,
@@ -34,5 +41,6 @@ CREATE TABLE salaries (
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
   PRIMARY KEY (emp_no)
 );
+	
 
 SELECT * FROM departments;
