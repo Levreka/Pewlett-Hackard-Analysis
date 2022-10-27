@@ -68,6 +68,16 @@ CREATE TABLE titles (
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
     PRIMARY KEY (emp_no,title,from_date,to_date)
 );	
+--importing data with out taking into consideration the relationships between the tables
+-- will generate an error when importing so like in our example we would do first departments
+-- not dept_managers first since dept_managers has foreing keys to departments 
+-- so you can not start importing data into a table that references another table key
+-- and there is no data in that table 
+
+
+
+
+
 
 SELECT * FROM departments;
 --there was an error with importing the data we got pgadmin utility error go to preference to set binary path
