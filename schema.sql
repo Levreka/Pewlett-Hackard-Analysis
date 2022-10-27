@@ -65,3 +65,8 @@ CREATE TABLE dept_emp (
 );
 
 SELECT * FROM departments;
+--there was an error with importing the data we got pgadmin utility error go to preference to set binary path
+--in order to fix this go to file menu preferences find binary path got to your version of postgress downloaded
+-- click the folder to browse if you did the default installing go to c drive--program files--find postgresql
+-- go into folder click the only folder in there wich should equal the number of your version mine was 15
+-- and select the bin number that would be the last folder to select after that save and close out of preferences
