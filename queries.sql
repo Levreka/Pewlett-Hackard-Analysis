@@ -125,3 +125,30 @@ ORDER BY de.dept_no;
 SELECT*FROM employee_count
 
 
+-- creating a new table to hold the following information employee number, first name, last name, gender, to date, salary
+-- we are using allias to make code shorter
+
+-- gathering the columns we want from the employees table
+SELECT e.emp_no,
+    e.first_name,
+	e.last_name,
+    e.gender,
+    s.salary,
+    de.to_date
+-- creating a new table with our query if you want to see the table before actually sending it
+--you can comment into out and run the code and uncomment it later to actually send it to table
+INTO emp_info
+--setting up our allias
+FROM employees as e
+-- setting up our first joint with salaries and setting allias
+INNER JOIN salaries as s
+-- matching where our join will take place
+ON (e.emp_no = s.emp_no)
+-- setting up a third join and with dept_emp and setting allias
+INNER JOIN dept_emp as de
+-- matching where our join will take place
+ON (e.emp_no = de.emp_no)
+-- setting our conditions to filter the data
+WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (e.hire_date BETWEEN '1985-01-01' AND '1988-12-31')
+AND (de.to_date = '9999-01-01');
