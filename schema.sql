@@ -85,3 +85,36 @@ SELECT * FROM departments;
 -- click the folder to browse if you did the default installing go to c drive--program files--find postgresql
 -- go into folder click the only folder in there wich should equal the number of your version mine was 15
 -- and select the bin number that would be the last folder to select after that save and close out of preferences
+
+
+
+-- begin querying data after importing our data from the csv files
+-- for anyone born between 1952 and 1955 because they will begin
+-- retiring according to class work
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
+
+-- create another query looking for only employees born 1952
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31';
+
+--query to search employees born in 1953
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1953-01-01' AND '1953-12-31';
+
+
+--query to search employees born in 1954
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1954-01-01' AND '1954-12-31';
+
+
+--query to search employees born in 1955
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1955-01-01' AND '1955-12-31';
+
