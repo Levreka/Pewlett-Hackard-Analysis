@@ -106,3 +106,22 @@ WHERE de.to_date = ('9999-01-01');
 
 --looking at the table
 SELECT*FROM current_emp
+
+--Let's continue to work on these lists this time using COUNT, GROUP BY, and ORDER BY with the joins.
+--- Employee count by department number count was run on the emp_no on the current_emp table
+SELECT COUNT(ce.emp_no), de.dept_no
+-- creating a new table with this join and query
+INTO employee_count
+-- this next two lines are creating our allias 
+FROM current_emp as ce
+LEFT JOIN dept_emp as de
+ON ce.emp_no = de.emp_no
+-- will group them by the deptartement number
+GROUP BY de.dept_no
+-- will put them departemnt order from smallets to largest
+ORDER BY de.dept_no;
+
+--VIEWING THE TABLE
+SELECT*FROM employee_count
+
+
