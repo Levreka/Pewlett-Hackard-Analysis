@@ -43,15 +43,6 @@ CREATE TABLE salaries (
   PRIMARY KEY (emp_no)
 );
 	
--- create table titles with foreing key
-CREATE TABLE titles (
-    emp_no INT NOT NULL,
-	title VARCHAR NOT NULL,
-    from_date DATE NOT NULL,
-    to_date DATE NOT NULL,
-	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-    PRIMARY KEY (emp_no)
-);	
 
 -- create table for dept_emp
 CREATE TABLE dept_emp (
@@ -63,6 +54,20 @@ CREATE TABLE dept_emp (
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     PRIMARY KEY (emp_no, dept_no)
 );
+-- create table titles with foreing key, NOTE IMPORTANT: for the primary key here
+--is a composite primary key here is the reason lookin at the data in this table
+--in order to find one individual you need their emp_no but you also have repeating
+-- emp_no so we need to add tittles unfortunaly tittles also repeats
+-- we go to begining and ending dates to create one big composite key if you dont do 
+-- this importing your data you will get an error saying repeating key 
+CREATE TABLE titles (
+    emp_no INT NOT NULL,
+	title VARCHAR NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
+    PRIMARY KEY (emp_no,title,from_date,to_date)
+);	
 
 SELECT * FROM departments;
 --there was an error with importing the data we got pgadmin utility error go to preference to set binary path
