@@ -124,6 +124,10 @@ ORDER BY de.dept_no;
 --VIEWING THE TABLE
 SELECT*FROM employee_count
 
+
+--THE FOLLOWING QUERIES AND LIST ARE HELPFUL TO LEARNING HOW TO JOIN 
+
+
 --List 1: Employee Information
 -- creating a new table to hold the following information employee number, first name, last name, gender, to date, salary
 -- we are using allias to make code shorter
@@ -138,7 +142,7 @@ SELECT e.emp_no,
 -- creating a new table with our query if you want to see the table before actually sending it
 --you can comment into out and run the code and uncomment it later to actually send it to table
 INTO emp_info
---setting up our allias
+---- selecting the tables we want to retrieve data from using allias
 FROM employees as e
 -- setting up our first joint with salaries and setting allias
 INNER JOIN salaries as s
@@ -157,7 +161,7 @@ AND (de.to_date = '9999-01-01');
 --This list includes the manager's employee number, first name, last name, and their starting and ending employment dates. Look at the ERD again and see where the data we need resides.
 -- List of managers per department
 
--- selecting our target tables and targert columsn using allias
+-- selecting our target targert columsn using allias
 SELECT  dm.dept_no,
         d.dept_name,
         dm.emp_no,
@@ -167,16 +171,55 @@ SELECT  dm.dept_no,
         dm.to_date
 -- we are converting our query into a new table
 INTO manager_info
---setting our allias
+---- selecting the tables we want to retrieve data from using allias
 FROM dept_manager AS dm
     -- first join setting allias as well for table
 	INNER JOIN departments AS d
-        --what is our table in common
+        --we are joining them on the following
 		ON (dm.dept_no = d.dept_no)
     -- setting second join and allias for table
 	INNER JOIN current_emp AS ce
-        --what is our table in common
+        ---we are joining them on the following
 		ON (dm.emp_no = ce.emp_no);
 		
 --viewing the data
 select*from manager_info
+
+--List 3: Department Retirees
+-- selecting the columns needed
+SELECT ce.emp_no,
+ce.first_name,
+ce.last_name,
+d.dept_name
+-- creating a new table from this query
+INTO dept_info
+-- selecting the tables we want to retrieve data from using allias
+FROM current_emp as ce
+-- first join setting allias as well for table
+INNER JOIN dept_emp AS de
+--we are joining them on the following
+ON (ce.emp_no = de.emp_no)
+-- setting second join and allias for table
+INNER JOIN departments AS d
+--we are joining them on the following
+ON (de.dept_no = d.dept_no);
+
+
+--Create a query that will return only the information relevant to the Sales team. The requested list includes:
+-- employee numbers, employee first name, employee last name, employee department name
+--tailored lists:
+-- selecting the columns needed 
+SELECT ri.emp_no,
+	ri.first_name,
+	ri.last_name,
+	di.dept_name
+---- creating a new table from this query
+INTO sales_info
+-- selecting the tables we want to retrieve data from using allias
+FROM retirement_info as ri
+	-- left join setting up another allias
+    LEFT JOIN dept_info as di
+	-- we are joinning them on the following 
+    ON (ri.emp_no = di.emp_no)	
+--setting up condition to return only sales data
+WHERE di.dept_name = 'Sales';
