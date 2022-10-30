@@ -223,3 +223,26 @@ FROM retirement_info as ri
     ON (ri.emp_no = di.emp_no)	
 --setting up condition to return only sales data
 WHERE di.dept_name = 'Sales';
+
+
+--Create a query that will return only the information relevant to the Sales team. The requested list includes:
+-- employee numbers, employee first name, employee last name, employee department name
+--tailored lists:Sales and Development teams information
+
+-- selecting the columns needed 
+SELECT ri.emp_no,
+	ri.first_name,
+	ri.last_name,
+	di.dept_name
+---- creating a new table from this query
+INTO sales_and_development_info
+-- selecting the tables we want to retrieve data from using allias
+FROM retirement_info as ri
+	-- left join setting up another allias
+    LEFT JOIN dept_info as di
+	-- we are joinning them on the following 
+    ON (ri.emp_no = di.emp_no)	
+--setting up condition to return only sales data and devlopment data 
+--we used the IN here so we dont create errors other option is to use or synthax 
+--look at sql documnetation https://www.techonthenet.com/postgresql/in.php
+WHERE di.dept_name IN ('Sales', 'Development');
