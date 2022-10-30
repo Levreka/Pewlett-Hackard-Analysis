@@ -124,7 +124,7 @@ ORDER BY de.dept_no;
 --VIEWING THE TABLE
 SELECT*FROM employee_count
 
-
+--List 1: Employee Information
 -- creating a new table to hold the following information employee number, first name, last name, gender, to date, salary
 -- we are using allias to make code shorter
 
@@ -152,3 +152,31 @@ ON (e.emp_no = de.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 AND (e.hire_date BETWEEN '1985-01-01' AND '1988-12-31')
 AND (de.to_date = '9999-01-01');
+
+--List 2: Management
+--This list includes the manager's employee number, first name, last name, and their starting and ending employment dates. Look at the ERD again and see where the data we need resides.
+-- List of managers per department
+
+-- selecting our target tables and targert columsn using allias
+SELECT  dm.dept_no,
+        d.dept_name,
+        dm.emp_no,
+        ce.last_name,
+        ce.first_name,
+        dm.from_date,
+        dm.to_date
+-- we are converting our query into a new table
+INTO manager_info
+--setting our allias
+FROM dept_manager AS dm
+    -- first join setting allias as well for table
+	INNER JOIN departments AS d
+        --what is our table in common
+		ON (dm.dept_no = d.dept_no)
+    -- setting second join and allias for table
+	INNER JOIN current_emp AS ce
+        --what is our table in common
+		ON (dm.emp_no = ce.emp_no);
+		
+--viewing the data
+select*from manager_info
