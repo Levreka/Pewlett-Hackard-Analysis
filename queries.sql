@@ -246,3 +246,4 @@ FROM retirement_info as ri
 --we used the IN here so we dont create errors other option is to use or synthax 
 --look at sql documnetation https://www.techonthenet.com/postgresql/in.php
 WHERE di.dept_name IN ('Sales', 'Development');
+
