@@ -8,6 +8,7 @@ Software
 PostgreSQL, pgAdmin, github, vs code, excell 
 Results:
 Retiring by Title Table:
+![image](https://user-images.githubusercontent.com/90356052/199127112-2200e4e0-16dc-4a57-b9e3-6fd78b9e359e.png)
 
  
  
@@ -17,6 +18,7 @@ Retiring by Title Table:
 •	Given that most of the labor force are senior titles resources should focus on replacing these positions first.
 Mentorship Program Table:
  
+![image](https://user-images.githubusercontent.com/90356052/199127126-0ab6de46-375f-44c8-afd3-0cc6d2ffa774.png)
 
 •	Part of the solution of Pewlett to keep some of their senior staff as part time mentors for new employees. The table shown compiles all the current eligible employees for this program.
 •	The grand total for those who qualify is 1549.
