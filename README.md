@@ -1,5 +1,5 @@
 # Pewlett-Hackard-Analysis
-##Overview of the analysis:
+## Overview of the analysis:
 Manager has given you two more assignments: determine the number of retiring employees per title, and identify employees who are eligible to participate in a mentorship program. Then, you’ll write a report that summarizes your analysis and helps prepare Bobby’s manager for the “silver tsunami” as many current employees reach retirement age.
 1.	Deliverable 1: The Number of Retiring Employees by Title
 2.	Deliverable 2: The Employees Eligible for the Mentorship Program
@@ -8,6 +8,9 @@ Software
 PostgreSQL, pgAdmin, github, vs code, excell 
 Results:
 Retiring by Title Table:
+
+![image](https://user-images.githubusercontent.com/90356052/199121543-77a4f1f5-6057-4d71-bf61-0152751647c6.png)
+
  
 •	Of the 300,024 employees within the company, are eligible for retirement.
 •	The resuts from the analysis show that 29,914 Senior Engineers, and 28,254 Senior Staff will be eligible to retire. Given that there are 90,398 employees eligible to retire, a large percent are senior level and when they depart a lot of company horse power will be lost.
