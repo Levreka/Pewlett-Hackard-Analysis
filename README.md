@@ -9,16 +9,21 @@ PostgreSQL, pgAdmin, github, vs code, excell
 Results:
 Retiring by Title Table:
 
-![image](https://user-images.githubusercontent.com/90356052/199121543-77a4f1f5-6057-4d71-bf61-0152751647c6.png)
-
  
-•	Of the 300,024 employees within the company, are eligible for retirement.
-•	The resuts from the analysis show that 29,914 Senior Engineers, and 28,254 Senior Staff will be eligible to retire. Given that there are 90,398 employees eligible to retire, a large percent are senior level and when they depart a lot of company horse power will be lost.
-•	The department with the most retirees is Development (25%) followed by Production (22%)
-•	There are 1,940 employees elibible for the mentorship program
+ 
+•	The table shows the count of  employees within the company, are eligible for retirement based on titles held.
+•	The results from the analysis show that Senior Engineers and Senior Staff have the largest population of available personal that can retired 25916 and 24926 respectively . Given that there are 72,458 employees eligible to retire in this table. 50,842 are senior level which is more than 50% of our sample population.
+•	21,616 for the other titles which include the Engineer, Staff, Technique Leader, Assistant Engineer and Manager.
+•	Given that most of the labor force are senior titles resources should focus on replacing these positions first.
 Mentorship Program Table:
  
+
+•	Part of the solution of Pewlett to keep some of their senior staff as part time mentors for new employees. The table shown compiles all the current eligible employees for this program.
+•	The grand total for those who qualify is 1549.
+•	Focusing on the two largest population Senior Engineers and Senior staff from the previous table we see that 169 Senior Engineers are available and 569 for Senior staff.
+•	78 for Assistant Engineer, 501 for Engineers, 155 for Staff, and 77 for Technique Leader.
+
 Summary:
-Based on the analysis Pewlett Hackard is facing over 90,000 vacant positions of the 510,000 employees company wide. Pewlett hackard will face a lose of qualified trained employees because of the low number of employees who are eligible for mentorship to train replacements.
-Additional age based queries can be ran to determine the oldest and youngest departments and prioritize mentorship with the oldest departments. this could minimize the turnover impact.
+Based on this results we can see that Pewlett still will have to find 70,909 positions to fill which again the majority of those positions will be senior. Pewlett hackard will face a big loss in senior positions, if Pewlett is looking to keep more senior in their mentorship program the result shows that perhaps this program needs to redefine their eligibility standards.
+Additional analysis may need to be done on the information and graphs to really show the effect and possible loss of talent Pewlett will suffer once this retirements start to happen.
 
